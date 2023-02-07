@@ -5,6 +5,8 @@ const fs = require("fs");
 const app = express();
 app.use(cors());
 
+const port = process.env.PORT || 3010;
+
 app.use(express.json());
 
 /* Create - Artist POST method */
@@ -103,6 +105,6 @@ const getArtistData = () => {
 };
 
 //configure the server port
-app.listen(3010, () => {
-  console.log("Server runs on port 3010");
+app.listen(port, () => {
+  console.log("Server runs on port PORT", port);
 });
